@@ -1,5 +1,4 @@
 import torch
-from datasets import load_metric
 from scipy.stats import pearsonr, spearmanr
 from sklearn.metrics import matthews_corrcoef, f1_score
 import numpy as np
@@ -67,7 +66,7 @@ def bleu_meteor_rougeL(preds, labels):
 
 
 def rouge(preds, labels):
-    rouge_score = load_metric("rouge")
+    rouge_score = evaluate.load("rouge")
     scores = rouge_score.compute(predictions=preds, references=labels, use_stemmer=True)
     return {
         'rouge1': scores['rouge1'].mid.fmeasure,

@@ -9,7 +9,7 @@ import datasets
 import numpy as np
 import torch
 import transformers
-from datasets import load_dataset, load_metric, DatasetDict
+from datasets import load_dataset
 from transformers import AutoConfig, AutoTokenizer, EvalPrediction, default_data_collator, DataCollatorWithPadding
 from transformers import (HfArgumentParser, TrainingArguments, PretrainedConfig,
                           glue_output_modes, glue_tasks_num_labels, set_seed)
@@ -25,8 +25,8 @@ from models.model_args import ModelArguments
 import wandb
 from utils.metrics import AutoPostProcessor
 
-from datasets import set_caching_enabled
-set_caching_enabled(False)
+from datasets import disable_caching
+disable_caching()
 
 output_modes = {
     "cola": "classification", "mnli": "classification", "mrpc": "classification",
