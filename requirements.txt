@@ -1,7 +1,7 @@
-transformers==4.12.0
-scipy==1.7.3
+transformers #==4.12.0
+scipy #==1.7.3
 datasets
-scikit-learn==1.0.2
+scikit-learn #==1.0.2
 black
 wandb
 matplotlib
